@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h2>Vos posts</h2>
+    <div class="list-group">
+      <button
+      class="list-group-item"
+      *ngFor="let post of posts; let i = index"
+      (click)="onViewPost(i)">
+        <h4 class="list-group-item-heading"><strong>Titre:</strong> {{post.title}} <strong>contenu:</strong> {{post.contenu}}</h4>
+        <div>
+          <button [ngClass]="{'btn btn-success': true}">
+            Love It
+          </button>
+          <button [ngStyle]="{'margin': '10px', 'padding': '0px 20px 10px 10px'}" [ngClass]="{'btn btn-danger': true}">
+            Don't love It
+          </button>
+          <button
+            [ngStyle]="{'margin': '0px 0px 0px 370px', 'padding': '0px 20px 10px 10px'}"
+            [ngClass]="{'btn btn-danger': true}"
+            (click)="onDeletePost(post)">
+            Delete post
+          </button>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
